@@ -7,7 +7,9 @@ public class SpaceShip : MonoBehaviour
 {
 	public float HorizontalSpeed = 0.02f;
 	public float VerticalSpeed = 0.02f;
-	
+
+	public GameLogic Logic;
+		
 	// Use this for initialization
 	void Start () {
 		
@@ -26,5 +28,10 @@ public class SpaceShip : MonoBehaviour
 		{
 			transform.Translate(0, -VerticalSpeed, 0);
 		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		Logic.GameOver = true;
 	}
 }
