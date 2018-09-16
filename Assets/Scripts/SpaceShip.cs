@@ -16,17 +16,21 @@ public class SpaceShip : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
-		transform.Translate(HorizontalSpeed, 0, 0);
-		if (Input.GetKey(KeyCode.UpArrow))
+		if (!Logic.GameOver)
 		{
-			transform.Translate(0, VerticalSpeed, 0);
-		}
+			transform.Translate(HorizontalSpeed, 0, 0);
 
-		if (Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.Translate(0, -VerticalSpeed, 0);
+			if (Input.GetKey(KeyCode.UpArrow))
+			{
+				transform.Translate(0, VerticalSpeed, 0);
+			}
+
+			if (Input.GetKey(KeyCode.DownArrow))
+			{
+				transform.Translate(0, -VerticalSpeed, 0);
+			}
 		}
 	}
 
