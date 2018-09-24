@@ -22,12 +22,12 @@ public class SpaceShip : MonoBehaviour
 		{
 			transform.Translate(HorizontalSpeed, 0, 0);
 
-			if (Input.GetKey(KeyCode.UpArrow))
+			if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 5.200) 
 			{
 				transform.Translate(0, VerticalSpeed, 0);
 			}
 
-			if (Input.GetKey(KeyCode.DownArrow))
+			if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > -4.000) 
 			{
 				transform.Translate(0, -VerticalSpeed, 0);
 			}
