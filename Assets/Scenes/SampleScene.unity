@@ -525,7 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087581a20291a44038cc541bfb1e7a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalSpeed: 0.02
   VerticalSpeed: 0.03
   Logic: {fileID: 1625411310}
 --- !u!4 &1074508082
@@ -618,7 +617,7 @@ MonoBehaviour:
   GameOverText: {fileID: 798531019}
   AsteroidPrefab: {fileID: 1476362731372434, guid: 29270226e61aa42f7b2599ba9e7f1db1,
     type: 2}
-  AsteroidSpawnX: 0
+  AsteroidSpawnX: 15
   AsteroidSpawnMinY: -4
   AsteroidSpawnMaxY: 5.2
   AsteroidSpawnFrequency: 1

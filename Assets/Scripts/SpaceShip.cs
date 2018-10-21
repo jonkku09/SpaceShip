@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class SpaceShip : MonoBehaviour
 {
-	public float HorizontalSpeed = 0.02f;
+	
 	public float VerticalSpeed = 0.02f;
 
 	public GameLogic Logic;
@@ -20,7 +20,7 @@ public class SpaceShip : MonoBehaviour
 	{
 		if (!Logic.GameOver)
 		{
-			transform.Translate(HorizontalSpeed, 0, 0);
+			
 
 			if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 5.200) 
 			{
