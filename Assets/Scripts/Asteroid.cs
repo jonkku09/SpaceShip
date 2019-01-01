@@ -16,5 +16,9 @@ public class Asteroid : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(HorizontalSpeed, 0, 0);
+		if (transform.position.x < -12.25)
+		{
+			Destroy(gameObject);
+		}
 	}
 }
