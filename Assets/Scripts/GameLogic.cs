@@ -34,7 +34,7 @@ public class GameLogic : MonoBehaviour
 		_asteroidSpawnTimer = _asteroidSpawnTimer + Time.deltaTime;
 		
 		
-		if (_asteroidSpawnTimer > AsteroidSpawnFrequency)
+		if (!GameOver && _asteroidSpawnTimer > AsteroidSpawnFrequency)
 		{
 			var asteroidSpawnY = Random.Range(AsteroidSpawnMinY, AsteroidSpawnMaxY);
 			var asteroidObject = Instantiate(AsteroidPrefab, new Vector3(AsteroidSpawnX, asteroidSpawnY), Quaternion.identity);
