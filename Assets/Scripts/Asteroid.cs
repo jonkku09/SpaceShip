@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour
 {
 
 	public float HorizontalSpeed = 0.02f;
-	
+	public GameLogic Logic;	
 	
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,12 @@ public class Asteroid : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(HorizontalSpeed, 0, 0);
+		if (!Logic.GameOver)
+		{
+			transform.Translate(HorizontalSpeed, 0, 0);
+		}
+
+		
 		if (transform.position.x < -12.25)
 		{
 			Destroy(gameObject);
