@@ -21,13 +21,10 @@ public class GameLogic : MonoBehaviour
 
 	private float _asteroidSpawnTimer;
 	
-	// Use this for initialization
 	void Start ()
 	{
-	//Instantiate(AsteroidPrefab, new Vector3(0, 0), Quaternion.identity);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		GameOverText.gameObject.SetActive(GameOver);
 

@@ -10,18 +10,13 @@ public class SpaceShip : MonoBehaviour
 
 	public GameLogic Logic;
 		
-	// Use this for initialization
-	void Start () {
-		
+	void Start () {		
 	}
 	
-	// Update is called once per frame
 	void Update()
 	{
 		if (!Logic.GameOver)
-		{
-			
-
+		{			
 			if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 5.200) 
 			{
 				transform.Translate(0, VerticalSpeed, 0);
