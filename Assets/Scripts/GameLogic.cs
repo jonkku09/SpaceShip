@@ -20,6 +20,14 @@ public class GameLogic : MonoBehaviour
 	public float AsteroidSpawnFrequency;
 
 	private float _asteroidSpawnTimer;
+
+	public float ScoreUpdateFrequency;
+
+	private float _scoreUpdateTimer;
+
+	private int _score;
+
+	public Text ScoreText;
 	
 	void Start ()
 	{
@@ -29,7 +37,7 @@ public class GameLogic : MonoBehaviour
 		GameOverText.gameObject.SetActive(GameOver);
 
 		_asteroidSpawnTimer = _asteroidSpawnTimer + Time.deltaTime;
-		
+		_scoreUpdateTimer = _scoreUpdateTimer + Time.deltaTime; 		
 		
 		if (!GameOver && _asteroidSpawnTimer > AsteroidSpawnFrequency)
 		{
@@ -39,6 +47,12 @@ public class GameLogic : MonoBehaviour
 			asteroid.Logic = this;
 			_asteroidSpawnTimer = 0;
 		}
-		
+
+		if (!GameOver && _scoreUpdateTimer > ScoreUpdateFrequency)
+		{
+			_score = _score + 1;
+			ScoreText.text = _score.ToString();
+			_scoreUpdateTimer = 0;
+		}	
 	}
 }
