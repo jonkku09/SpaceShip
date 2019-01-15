@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class SpaceShip : MonoBehaviour
 {
 	
-	public float VerticalSpeed = 0.02f;
+	public float VerticalSpeed;
 
 	public GameLogic Logic;
 		

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
 
-	public float HorizontalSpeed = 0.02f;
-	public float SpeedIncreaseByDifficulty = 0.0001f;
+	public float HorizontalSpeed;
+	public float SpeedIncreaseByDifficulty;
 	public GameLogic Logic;	
 	
 	void Start () {		
