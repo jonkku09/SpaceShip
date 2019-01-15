@@ -19,6 +19,8 @@ public class GameLogic : MonoBehaviour
 
 	public float AsteroidSpawnFrequency;
 
+	public float SpawnFrequencyChangeByDifficulty;
+
 	private float _asteroidSpawnTimer;
 
 	public float ScoreUpdateFrequency;
@@ -39,7 +41,7 @@ public class GameLogic : MonoBehaviour
 		_asteroidSpawnTimer = _asteroidSpawnTimer + Time.deltaTime;
 		_scoreUpdateTimer = _scoreUpdateTimer + Time.deltaTime; 		
 		
-		if (!GameOver && _asteroidSpawnTimer > AsteroidSpawnFrequency)
+		if (!GameOver && _asteroidSpawnTimer > AsteroidSpawnFrequency + GetDifficulty() * SpawnFrequencyChangeByDifficulty)
 		{
 			var asteroidSpawnY = Random.Range(AsteroidSpawnMinY, AsteroidSpawnMaxY);
 			var asteroidObject = Instantiate(AsteroidPrefab, new Vector3(AsteroidSpawnX, asteroidSpawnY), Quaternion.identity);

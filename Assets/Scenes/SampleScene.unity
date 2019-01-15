@@ -697,6 +697,7 @@ MonoBehaviour:
   AsteroidSpawnMinY: -4
   AsteroidSpawnMaxY: 5.2
   AsteroidSpawnFrequency: 1
+  SpawnFrequencyChangeByDifficulty: -0.1
   ScoreUpdateFrequency: 0.1
   ScoreText: {fileID: 1057535031}
 --- !u!4 &1625411311
