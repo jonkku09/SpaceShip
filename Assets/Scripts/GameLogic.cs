@@ -54,5 +54,11 @@ public class GameLogic : MonoBehaviour
 			ScoreText.text = _score.ToString();
 			_scoreUpdateTimer = 0;
 		}	
+		
+	}
+
+	 public float GetDifficulty()
+	{
+		return _score / 100f;
 	}
 }

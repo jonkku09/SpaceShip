@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087581a20291a44038cc541bfb1e7a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VerticalSpeed: 0.03
+  VerticalSpeed: 0.05
   Logic: {fileID: 1625411310}
 --- !u!4 &1074508082
 Transform:
