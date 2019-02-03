@@ -9,6 +9,8 @@ public class GameLogic : MonoBehaviour
 
 	public Text GameOverText;
 
+	public Button PlayAgainButton;
+
 	public GameObject AsteroidPrefab;
 
 	public float AsteroidSpawnX;
@@ -30,6 +32,20 @@ public class GameLogic : MonoBehaviour
 	private int _score;
 
 	public Text ScoreText;
+
+	public void Restart()
+	{
+		_score = 0;
+		_asteroidSpawnTimer = 0;
+		var spaceShip = GameObject.FindObjectOfType<SpaceShip>();
+		spaceShip.transform.position = new Vector3(-9,0);
+		GameOver = false;
+		var asteroids = GameObject.FindObjectsOfType<Asteroid>();
+		foreach (var asteroid in asteroids)
+		{
+			Destroy(asteroid.gameObject);	
+		}
+	}
 	
 	void Start ()
 	{
@@ -37,6 +53,7 @@ public class GameLogic : MonoBehaviour
 	
 	void Update () {
 		GameOverText.gameObject.SetActive(GameOver);
+		PlayAgainButton.gameObject.SetActive(GameOver);
 
 		_asteroidSpawnTimer = _asteroidSpawnTimer + Time.deltaTime;
 		_scoreUpdateTimer = _scoreUpdateTimer + Time.deltaTime; 		
