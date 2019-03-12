@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
-	public bool GameOver;
+	public bool GameOver { get; private set; }
 
 	public Text GameOverText;
 
@@ -27,12 +27,28 @@ public class GameLogic : MonoBehaviour
 
 	public float ScoreUpdateFrequency;
 
-	private float _scoreUpdateTimer;
+	private float _scoreUpdateTimer; 
 
 	private int _score;
 
+	private int _highScore;
+	
 	public Text ScoreText;
 
+	public Text HighScoreText;
+	
+	public void ShipDestroyed()
+	{
+		GameOver = true;
+		
+		if (_score > _highScore)
+		{	
+			_highScore = _score;
+			HighScoreText.text = "High Score: "  + _highScore;
+			PlayerPrefs.SetInt("highScore", _highScore);
+		}
+	}
+	
 	public void Restart()
 	{
 		_score = 0;
@@ -48,7 +64,9 @@ public class GameLogic : MonoBehaviour
 	}
 	
 	void Start ()
-	{
+	{		
+		_highScore = PlayerPrefs.GetInt("highScore");
+		HighScoreText.text = "High Score: "  + _highScore; 
 	}
 	
 	void Update () {
@@ -66,7 +84,7 @@ public class GameLogic : MonoBehaviour
 			asteroid.Logic = this;
 			_asteroidSpawnTimer = 0;
 		}
-
+		
 		if (!GameOver && _scoreUpdateTimer > ScoreUpdateFrequency)
 		{
 			_score = _score + 1;

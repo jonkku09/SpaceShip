@@ -31,6 +31,7 @@ public class SpaceShip : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		Logic.GameOver = true;
+		Logic.ShipDestroyed();
 	}
 }
+
