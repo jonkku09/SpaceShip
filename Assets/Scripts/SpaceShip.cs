@@ -17,7 +17,7 @@ public class SpaceShip : MonoBehaviour
 	{
 		if (!Logic.GameOver)
 		{			
-			if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < 5.200) 
+			if ((Input.GetKey(KeyCode.UpArrow) || Logic.UpPressed) && transform.position.y < 5.200) 
 			{
 				transform.Translate(0, VerticalSpeed, 0);
 			}

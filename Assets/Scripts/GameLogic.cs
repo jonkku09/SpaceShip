@@ -7,6 +7,8 @@ public class GameLogic : MonoBehaviour
 {
 	public bool GameOver { get; private set; }
 
+	public bool UpPressed { get; private set; }
+	
 	public Text GameOverText;
 
 	public Button PlayAgainButton;
@@ -47,6 +49,16 @@ public class GameLogic : MonoBehaviour
 			HighScoreText.text = "High Score: "  + _highScore;
 			PlayerPrefs.SetInt("highScore", _highScore);
 		}
+	}
+
+	public void UpButtonDown()
+	{
+		UpPressed = true;
+	}
+	
+	public void UpButtonUp()
+	{
+		UpPressed = false;
 	}
 	
 	public void Restart()
